@@ -1,0 +1,17 @@
+{
+  "name": "ws-chat",
+  "version": "1.0.0",
+  "description": "chat app",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "4",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
