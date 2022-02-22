@@ -1,4 +1,4 @@
-module.exports = (io, socket) => {
+module.exports = (io, socket, users) => {
   const sendMessage = (message) => {
     if (message.startsWith('/p')) {
       const usernameTarget = message.replace(/\/p \[(\w+)\].*/, '$1')

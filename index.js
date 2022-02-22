@@ -35,24 +35,9 @@ io.on('connection', (socket) => {
   
   console.log(`${socket.username} HAS ENTERED THE CHAT`)
   socket.broadcast.emit('send-message', `${socket.username} HAS ENTERED THE CHAT`)
-  
-  // registerMessageHandler(io, socket)
-  socket.on('send-message', (message) => {
-    console.log('>> send message');
-    if (message.startsWith('/p')) {
-      const usernameTarget = message.replace(/\/p \[(\w+)\].*/, '$1')
-      const stripedMessage = message.replace(/\/p \[\w+\]/, '')
-      const socketId = users[usernameTarget]
-      if (socketId) {
-        socket.to(socketId).emit('send-message', 
-        `privately from ${socket.username}: ${stripedMessage}`)
-      }
-    } 
-    else
-      socket.broadcast.emit('send-message', `[${socket.username}]: ${message}`)
-  })
 
   registerUserHandlers(io, socket)
+  registerMessageHandler(io, socket, users)
   registerDisconnectionHandlers(io, socket, users)
 })
 

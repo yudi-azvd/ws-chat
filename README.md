@@ -13,7 +13,7 @@ que começou a digitar)
 Clone o respositório e entre nele
 
 ```
-git clone https://github.com/yudi-azvd/ws-chat
+git clone https://github.com/yudi-azvd/ws-chat.git
 cd ws-chat
 ```
 
