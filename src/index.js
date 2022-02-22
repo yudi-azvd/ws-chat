@@ -7,10 +7,12 @@ const server = http.createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(server)
 
-const { getUsername } = require("./middlewares");
+// const { getUsername } = require("./middlewares");
 const registerMessageHandler = require('./handleMessage');
 const registerUserHandlers = require('./handleUser')
 const registerDisconnectionHandlers = require('./handleDisconnection')
+
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/index.html`)
