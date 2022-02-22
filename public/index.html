@@ -74,6 +74,8 @@
 
   <script src="/socket.io/socket.io.js"></script>
   <script>
+    const serverUrl = window.location.host === 0;
+
     const username = prompt('Name', 'aaaa')
     // https://stackoverflow.com/questions/44628363/socket-io-access-control-allow-origin-error
     const socket = io('http://localhost:3000', { query: { username }, transports: ['websocket'] })
