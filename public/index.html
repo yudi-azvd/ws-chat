@@ -74,11 +74,15 @@
 
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    const serverUrl = window.location.host === 0;
 
-    const username = prompt('Name', 'aaaa')
+    const isLocalhost = window.location.host.includes('localhost')
+    const serverUrl = isLocalhost 
+      ? 'http://localhost:3000' 
+      : 'https://heroku-server:80'
+    
+    const username = prompt('Name', 'ErenYeager')
     // https://stackoverflow.com/questions/44628363/socket-io-access-control-allow-origin-error
-    const socket = io('http://localhost:3000', { query: { username }, transports: ['websocket'] })
+    const socket = io(serverUrl, { query: { username }, transports: ['websocket'] })
 
     const form = document.getElementById('form')
     const input = document.getElementById('input')
