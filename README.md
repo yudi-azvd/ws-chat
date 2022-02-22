@@ -1,5 +1,8 @@
 # Chat com Socket.IO
 
+Você pode acessar o chat nesse endereço: 
+[https://immense-citadel-41453.herokuapp.com/](https://immense-citadel-41453.herokuapp.com/)
+
 ## Funcionalidades
 - chat em tempo real com vários usuários
 - suporte para apelidos/nomes de usuário
