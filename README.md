@@ -30,7 +30,7 @@ yarn dev
 ```
 
 Você pode abrir múltiplas abas em seu navegador no endereço
-http://localhost:300.
+http://localhost:5000.
 
 
 ## Referências
